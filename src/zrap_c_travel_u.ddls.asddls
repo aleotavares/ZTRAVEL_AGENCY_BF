@@ -5,13 +5,13 @@
 
 define root view entity ZRAP_C_TRAVEL_U as projection on zrap_i_travel_u
 {
-    key TravelID,
+    key TravelId,
       @Consumption.valueHelpDefinition: [ { entity: { name: '/DMO/I_Agency', element: 'AgencyID' } } ]
       @Search.defaultSearchElement: true
-      AgencyID,
+      AgencyId,
       @Consumption.valueHelpDefinition: [ { entity: { name: '/DMO/I_Customer', element: 'CustomerID' } } ]
       @Search.defaultSearchElement: true
-      CustomerID,
+      CustomerId,
       BeginDate,
       EndDate,
       @Semantics.amount.currencyCode: 'CurrencyCode'
@@ -30,7 +30,7 @@ define root view entity ZRAP_C_TRAVEL_U as projection on zrap_i_travel_u
       /* Associations */
       //ZI_RAP_TRAVEL_U_####
       _Agency,
-      _Booking : redirected to composition child ZRAP_C_Booking_U,
+      _Booking : redirected to composition child ZRAP_C_BOOKING_U,
       _Currency,
       _Customer
 }
